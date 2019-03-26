@@ -6,17 +6,23 @@ import Folder from './Folder'
 
 class FolderList extends React.Component  {
 
+  
 
-render() {
+  render() {
+    if(this.props.match !== undefined) {
+      console.log(this.props.match.path)
+    }
     let folders = STORE.folders.map(folder =>{
-        return <Folder folderid={folder.id} folderName= {folder.name} />
+      return <Folder 
+        folderid={folder.id} 
+        folderName= {folder.name} />
     })
-    
-  return (
+      
+    return (
       <ul>
-          {folders}
-    </ul>
-  );
+        {folders}
+      </ul>
+    );
   }
 }
 

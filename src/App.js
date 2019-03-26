@@ -6,6 +6,13 @@ import NoteList from './NoteList'
 
 class App extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+
+    }
+  }
+
   render(){
   return (
     <main className='App'>
@@ -18,7 +25,12 @@ class App extends React.Component {
     </section>
 
     <section>
-     <Route path='/Folder/:id' component={NoteList}  />
+      <Route path='/Folder/:id' component={NoteList}  />
+    </section>
+
+    <section>
+      <Route path='/Note/' component={NoteList} />
+      <Route path='/Note/' component={FolderList} />
     </section>
 
     </main>
