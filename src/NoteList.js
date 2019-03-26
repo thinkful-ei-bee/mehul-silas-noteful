@@ -8,7 +8,7 @@ class NoteList extends React.Component  {
     
 
   render(){
-    const NOTES = STORE.notes.filter(note =>{
+    const NOTES = this.props.store.notes.filter(note =>{
        return note.folderId === this.props.match.params.id
       }
     )
@@ -17,7 +17,7 @@ class NoteList extends React.Component  {
         return <Note noteId = {note.id} 
           modified = {note.modified} 
           name= {note.name}
-          content={note.content} />
+           />
       })
     return (
       <ul>
