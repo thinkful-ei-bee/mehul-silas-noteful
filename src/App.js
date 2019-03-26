@@ -5,6 +5,7 @@ import FolderList from './FolderList'
 import NoteList from './NoteList'
 import NotePage from './NotePage'
 import STORE from './STORE'
+import './App.css';
 
 class App extends React.Component {
 

@@ -16,7 +16,7 @@ class FolderList extends React.Component  {
     })
       
     return (
-      <ul>
+      <ul className='folderList'>
         {folders}
       </ul>
     );

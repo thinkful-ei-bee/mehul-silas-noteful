@@ -17,11 +17,11 @@ class NotePage extends React.Component  {
     let date = moment(NOTE.modified).format('MM-DD-YYYY HH:MM:SS');
 
     return (
-      <ul>
-          <li>
+      <ul className='note-page'>
+          <li className='back-button'>
         <Link to={`/Folder/${NOTE.folderId}`}>Go Back</Link>
         </li>
-          <li>
+          <li className='note-info'>
         <h2>{NOTE.name}</h2>
         <p>{date} </p>
         <p>{NOTE.content}</p>

@@ -20,7 +20,7 @@ class NoteList extends React.Component  {
            />
       })
     return (
-      <ul>
+      <ul className="noteList">
         {newnotes}
       </ul>
     );

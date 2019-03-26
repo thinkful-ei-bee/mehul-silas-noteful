@@ -3,9 +3,9 @@ import {Route,Link} from 'react-router-dom';
 
 function HomePage() {
   return (
-    <div>
-      <Link to='/'>Notes</Link>
-    </div>
+    <h1>
+      <Link to='/'>Noteful</Link>
+    </h1>
   );
 }
 

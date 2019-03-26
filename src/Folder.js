@@ -8,7 +8,7 @@ class Folder extends React.Component  {
   
   render(){
     return ( 
-      <li key={this.props.folderid}>         
+      <li key={this.props.folderid} className='folderItem'>         
         <NavLink to={`/Folder/${this.props.folderid}`}>
         {this.props.folderName}</NavLink>
       </li>
