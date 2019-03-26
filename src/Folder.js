@@ -9,7 +9,7 @@ class Folder extends React.Component  {
   render(){
     console.log(this.props.changeOrigin);
     return ( 
-      <li key={this.props.folderid}>         
+      <li key={this.props.folderid} className ='folderItem'>         
         <NavLink onClick={() =>this.props.changeOrigin(false)} to={`/Folder/${this.props.folderid}`}>
         {this.props.folderName}</NavLink>
       </li>

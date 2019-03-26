@@ -5,9 +5,9 @@ class HomePage extends React.Component {
   
   render(){  
   return (
-    <div>
-      <Link to='/' onClick={() => this.props.changeOrigin(true)}>Notes</Link>
-    </div>
+    <h1>
+      <Link to='/' onClick={() => this.props.changeOrigin(true)}>Noteful</Link>
+    </h1>
   );
 }
 }
