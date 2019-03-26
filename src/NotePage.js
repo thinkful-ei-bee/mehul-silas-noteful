@@ -9,13 +9,14 @@ class NotePage extends React.Component  {
     
 
   render(){
+    console.log(this.props.curr);
     const NOTE = this.props.store.notes.find(note =>{
        return note.id === this.props.match.params.id
       }
     )
     
     let date = moment(NOTE.modified).format('MM-DD-YYYY HH:MM:SS');
-
+if(this.props.fromOrigin !== true){
     return (
       <ul className='note-page'>
           <li className='back-button'>
@@ -28,6 +29,22 @@ class NotePage extends React.Component  {
         </li>
       </ul>
     );
+}
+else{ 
+  return (
+    <ul>
+        <li>
+      <Link to={`/`}>Go Back</Link>
+      </li>
+        <li>
+      <h2>{NOTE.name}</h2>
+      <p>{date} </p>
+      <p>{NOTE.content}</p>
+      </li>
+    </ul>
+  );
+
+}
   }
 }
 

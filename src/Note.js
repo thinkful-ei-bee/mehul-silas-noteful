@@ -5,6 +5,7 @@ import moment from 'moment';
 
 function Note(props) {
  let date = moment(props.modified).format('MM-DD-YYYY HH:MM:SS');
+  
 
   return (
       

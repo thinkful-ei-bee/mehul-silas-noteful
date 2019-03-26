@@ -9,8 +9,9 @@ class FolderList extends React.Component  {
   
 
   render() {
+
     let folders = this.props.store.folders.map(folder =>{
-      return <Folder 
+      return <Folder changeOrigin={this.props.changeOrigin}
         folderid={folder.id} 
         folderName= {folder.name} />
     })

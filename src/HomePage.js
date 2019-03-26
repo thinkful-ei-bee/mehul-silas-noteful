@@ -1,12 +1,14 @@
 import React from 'react';
 import {Route,Link} from 'react-router-dom';
 
-function HomePage() {
+class HomePage extends React.Component {
+  
+  render(){  
   return (
     <h1>
-      <Link to='/'>Noteful</Link>
+      <Link to='/' onClick={() => this.props.changeOrigin(true)}>Noteful</Link>
     </h1>
   );
 }
-
+}
 export default HomePage;
