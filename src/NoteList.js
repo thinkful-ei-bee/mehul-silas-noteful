@@ -11,10 +11,17 @@ class NoteList extends React.Component  {
 
     const {state} = this.context;
 
-    const NOTES = state.notes.filter(note =>{
-       return note.folderId === this.props.match.params.id
-      }
-    )
+    console.log(this.props)
+
+    let NOTES;
+
+    if(this.props.location.pathname !== '/'){
+      NOTES = state.notes.filter(note =>{
+        return note.folderId === this.props.match.params.id
+      })
+    } else {
+      NOTES = state.notes
+    }
 
      let newnotes =  NOTES.map(note => {
         return <Note noteId = {note.id} 

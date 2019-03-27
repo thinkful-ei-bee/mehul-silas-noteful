@@ -9,7 +9,7 @@ class NotePage extends React.Component  {
 
   render(){
 
-    const {state} = this.context;
+    const {state, deleter} = this.context;
 
     const NOTE = state.notes.find(note =>{
        return note.id === this.props.match.params.id
@@ -20,13 +20,16 @@ class NotePage extends React.Component  {
 
     return (
       <ul className='note-page'>
-          <li className='back-button'>
-        <Link to={`/Folder/${NOTE.folderId}`}>Go Back</Link>
+        <li className='back-button'>
+          <Link to={`/Folder/${NOTE.folderId}`}>Go Back</Link>
         </li>
-          <li className='note-info'>
-        <h2>{NOTE.name}</h2>
-        <p>{date} </p>
-        <p>{NOTE.content}</p>
+        <li className='delete-button'>
+          <Link to={`/Folder/${NOTE.folderId}`} onClick={() => deleter(NOTE.id)}>Delete</Link>
+        </li>
+        <li className='note-info'>
+          <h2>{NOTE.name}</h2>
+          <p>{date} </p>
+          <p>{NOTE.content}</p>
         </li>
       </ul>
     );

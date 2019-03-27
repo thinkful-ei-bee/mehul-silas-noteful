@@ -14,6 +14,7 @@ class App extends React.Component {
     this.state = {
       folders: [],
       notes: [],
+      onMain: true,
     }
   }
 
@@ -65,6 +66,7 @@ class App extends React.Component {
         <section>
           <Route path='/' component={HomePage} />
           <Route exact path='/' component={FolderList}/>
+          <Route exact path='/' component={NoteList} />
         </section>
 
         <section>
