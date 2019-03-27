@@ -37,3 +37,10 @@
   padding: 2%;
   position: relative;
 }
+
+.noteList li button {
+  float: right;
+  position: relative;
+  bottom: 50px;
+  right: 10px
+}

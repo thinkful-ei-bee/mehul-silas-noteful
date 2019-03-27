@@ -1,15 +1,17 @@
 import React from 'react';
-import HomePage from './HomePage'
-import {Route,Link} from 'react-router-dom';
-import STORE from './STORE'
-import Note from './Note'
+import {Link} from 'react-router-dom';
 import moment from 'moment';
+import UserContext from './UserContext';
 
 class NotePage extends React.Component  {
-    
+
+  static contextType = UserContext;    
 
   render(){
-    const NOTE = this.props.store.notes.find(note =>{
+
+    const {state} = this.context;
+
+    const NOTE = state.notes.find(note =>{
        return note.id === this.props.match.params.id
       }
     )

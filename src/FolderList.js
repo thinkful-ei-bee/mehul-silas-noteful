@@ -1,15 +1,16 @@
 import React from 'react';
-import HomePage from './HomePage'
-import {Route,Link} from 'react-router-dom';
-import STORE from './STORE'
 import Folder from './Folder'
+import UserContext from './UserContext'
 
 class FolderList extends React.Component  {
 
-  
+  static contextType = UserContext;  
 
   render() {
-    let folders = this.props.store.folders.map(folder =>{
+
+    const {state} = this.context;
+
+    let folders = state.folders.map(folder =>{
       return <Folder 
         folderid={folder.id} 
         folderName= {folder.name} />

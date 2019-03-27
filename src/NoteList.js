@@ -1,14 +1,17 @@
 import React from 'react';
-import HomePage from './HomePage'
-import {Route,Link} from 'react-router-dom';
-import STORE from './STORE'
 import Note from './Note'
+import UserContext from './UserContext';
 
 class NoteList extends React.Component  {
+
+  static contextType = UserContext;
     
 
   render(){
-    const NOTES = this.props.store.notes.filter(note =>{
+
+    const {state} = this.context;
+
+    const NOTES = state.notes.filter(note =>{
        return note.folderId === this.props.match.params.id
       }
     )

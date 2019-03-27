@@ -1,20 +1,28 @@
 import React from 'react';
-import HomePage from './HomePage';
-import {Route,Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import moment from 'moment';
+import UserContext from './UserContext';
 
-function Note(props) {
- let date = moment(props.modified).format('MM-DD-YYYY HH:MM:SS');
+class Note extends React.Component {
+ 
+  static contextType = UserContext;
 
-  return (
-      
-    <li key={props.noteId}>         
-      <Link to={`/Note/${props.noteId}`}>
-      {props.name}</Link>
-      <p>{date}</p>
-    </li>
-   
-  );
+  render() {
+
+    const {deleter} = this.context;
+    let date = moment(this.props.modified).format('MM-DD-YYYY HH:MM:SS');
+
+    return (
+    
+      <li key={this.props.noteId}>         
+        <Link to={`/Note/${this.props.noteId}`}>
+        {this.props.name}</Link>
+        <p>{date}</p>
+        <button onClick={() => deleter(this.props.noteId)}>Delete</button>
+      </li>
+    
+    );
+  }
 }
 
 export default Note;
