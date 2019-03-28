@@ -8,9 +8,9 @@ class FolderList extends React.Component  {
 
   render() {
 
-    const {state} = this.context;
+    const {folders} = this.context;
 
-    let folders = state.folders.map(folder =>{
+    let uniqueFolders = folders.map(folder =>{
       return <Folder 
         folderid={folder.id} 
         folderName= {folder.name} />
@@ -18,7 +18,7 @@ class FolderList extends React.Component  {
       
     return (
       <ul className='folderList'>
-        {folders}
+        {uniqueFolders}
       </ul>
     );
   }

@@ -9,19 +9,18 @@ class NoteList extends React.Component  {
 
   render(){
 
-    const {state} = this.context;
-
-    console.log(this.props)
+    // Import the state
+    const {notes} = this.context;
 
     let NOTES;
-
     if(this.props.location.pathname !== '/'){
-      NOTES = state.notes.filter(note =>{
+      NOTES = notes.filter(note =>{
         return note.folderId === this.props.match.params.id
       })
     } else {
-      NOTES = state.notes
+      NOTES = notes
     }
+
 
      let newnotes =  NOTES.map(note => {
         return <Note noteId = {note.id} 

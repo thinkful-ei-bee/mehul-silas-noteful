@@ -9,9 +9,9 @@ class NotePage extends React.Component  {
 
   render(){
 
-    const {state, deleter} = this.context;
+    const {notes, deleter} = this.context;
 
-    const NOTE = state.notes.find(note =>{
+    const NOTE = notes.find(note =>{
        return note.id === this.props.match.params.id
       }
     )
